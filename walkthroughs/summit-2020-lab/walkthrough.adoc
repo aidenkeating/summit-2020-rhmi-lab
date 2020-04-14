@@ -635,7 +635,7 @@ In this section you'll see how the resources created in previous sections are ut
 . The *Environments* section in *Integration > Configuration* should now contain the *Staging Environment* details.
 . Use the *Example curl for testing* to retrieve available meters via cURL or you're preferred HTTP client, e.g:
 +
-[subs="attributes+"]/
+[subs="attributes+"]
 ----
 curl "{3scale-staging-api-host}/meters?status=available&user_key=4b7708e722733fe0e6b355a7dfd1f777"
 ----
@@ -684,13 +684,13 @@ In this section you will create a *Build Config* that uses the s2i (source-to-im
 . Select *Builds > Build Configs* and click the *Create Build Config* button.
 . Delete sample YAML and copy and paste the YAML below in its place.
 +
-[subs="attributes+"]/
+[subs="attributes+"]
 ----
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   name: {is-name}
-  namespace: evals01-summit-035a
+  namespace: {walkthrough-namespace}
 spec:
   output:
     to:
@@ -720,6 +720,7 @@ spec:
       imageChange: {}
     - type: ConfigChange
 ----
++
 . Replace the `3SCALE_API_KEY` and `3SCALE_STAGING_URL` with values from the *Example curl for testing* item in the previous section {3Scale-ProductName}.
 . The lab instructor(s) will provide a value for the `MAPS_API_KEY`.
 . Take note of the following highlights in the YAML:
@@ -737,7 +738,7 @@ spec:
 . Select *Workloads > Deployments* and click the *Create Deployment* button.
 . Copy and paste the following YAML into the textarea:
 +
-[subs="attributes+"]/
+[subs="attributes+"]
 ----
 apiVersion: apps/v1
 kind: Deployment
@@ -765,13 +766,13 @@ spec:
 .. Select *Networking > Services* .
 .. Click the *Create Service* button.
 +
-[subs="attributes+"]/
+[subs="attributes+"]
 ----
 apiVersion: v1
 kind: Service
 metadata:
   name: {is-name}
-  namespace: evals01-summit-035a
+  namespace: {walkthrough-namespace}
   labels:
     app: {is-name}
 spec:
