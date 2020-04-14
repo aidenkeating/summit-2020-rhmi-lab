@@ -640,7 +640,6 @@ In this section you'll see how the resources created in previous sections are ut
 . Ensure that the *{3scale-api-name}* Product is selected in the top navigation menu of {3Scale-ProductName}.
 . Select *Integration > Settings*:
 .. In the *Staging Public Base URL* field enter `{3scale-staging-api-host}`.
-.. Under the *Credentials Location* section choose `As HTTP Headers`.
 .. Scroll down and click the *Update Product* button.
 . Select *Integration > Configuration* from the side menu and click *add a Backend and promote this configuration* :
 . In the *Add Backend* screen select your *{3scale-backend-name}* in the *Backend* field and click *Add to Product*.
